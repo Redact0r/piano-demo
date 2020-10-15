@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="piano-styles.css" />
+    <title>Interactive Piano Master</title>
+    <link rel="shortcut icon" href="#" />
+  </head>
+  <body>
+    <main>
+      <section
+        role="piano"
+        class="piano-instrument"
+        aria-roledescription="interactive piano"
+      >
+        <div class="piano">
+          <div class="key white c aeolian blues" id="C3" tabindex="0">
+            <div class="pkey whitenote">C</div>
+          </div>
+          <div class="key black cs" id="CsDb3" tabindex="0">
+            <div class="pkey blacknote flat-note">B♭</div>
+          </div>
+          <div class="key white d aeolian" id="D3" tabindex="0">
+            <div class="pkey whitenote">D</div>
+          </div>
+          <div class="key black ds aeolian blues" id="DsEb3" tabindex="0">
+            <div class="pkey blacknote">E♭</div>
+          </div>
+          <div class="key white e" id="E3" tabindex="0">
+            <div class="pkey whitenote">E</div>
+          </div>
+          <div class="key white f aeolian blues" id="F3" tabindex="0">
+            <div class="pkey whitenote">F</div>
+          </div>
+          <div class="key black fs blues" id="FsGb3" tabindex="0">
+            <div class="pkey blacknote">G♭</div>
+          </div>
+          <div class="key white g aeolian blues" id="G3" tabindex="0">
+            <div class="pkey whitenote">G</div>
+          </div>
+          <div class="key black gs aeolian" id="GsAb3" tabindex="0">
+            <div class="pkey blacknote">A♭</div>
+          </div>
+          <div class="key white a" id="A3" tabindex="0">
+            <div class="pkey whitenote">A</div>
+          </div>
+          <div class="key black as aeolian blues" id="AsBb3" tabindex="0">
+            <div class="pkey blacknote">B♭</div>
+          </div>
+          <div class="key white b" id="B3" tabindex="0">
+            <div class="pkey whitenote">B</div>
+          </div>
+          <div class="key white f aeolian blues" id="c4" tabindex="0">
+            <div class="pkey whitenote">C</div>
+          </div>
+        </div>
+      </section>
+      <section class="piano-selector">
+        <div class="selector-menu">
+          <ul class="selector-menu-ul">
+            <button class="play-btn">&#9658; Play</button>
+            <li class="selector-menu-li" value="aeolian">Aeolian</li>
+            <li class="selector-menu-li" value="blues">Blues</li>
+            <li class="selector-menu-li" value="chromatic">Chromatic</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <script src="piano-script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400");
+
+.guitar-body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.guitar-instrument {
+  background-color: #353535;
+  font-family: Lato, sans-serif;
+  background-clip: border-box;
+}
+
+.fretboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #5c4827 url(../assets/images/wood-pattern.png);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 91vh;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.note-btn,
+.single-fretmark:after {
+  display: none;
+}
+
+.string,
+.fake-string {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.fake-string {
+  width: 20%;
+}
+
+.string:nth-child(7) {
+  width: 50%;
+}
+
+.string:before {
+  content: "";
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(to left, #eee, #999);
+  box-shadow: 10px 3px 10px #0f0c06;
+  z-index: 1;
+  position: absolute;
+}
+
+.string:nth-child(3):before {
+  width: 9px;
+}
+
+.string:nth-child(4):before {
+  width: 8px;
+}
+
+.string:nth-child(5):before {
+  width: 7px;
+}
+
+.string:nth-child(6):before {
+  width: 6px;
+}
+
+.string:nth-child(7):before {
+  width: 5px;
+}
+
+.note-fret {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 1em;
+  width: 100%;
+  height: 10px;
+  border-bottom: 10px solid;
+  border-image: linear-gradient(#777, #bbb, #777) 100% 1;
+}
+
+.note-btn {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  line-height: 33px;
+  text-align: center;
+  z-index: 2;
+  color: #eee;
+  background: teal;
+  opacity: 0.5;
+  border: 0;
+  margin: -4em 0 0 -0.8em;
+}
+
+.guitar-end {
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 10px solid;
+  border-image: linear-gradient(#bbb, #fff, #bbb) 100% 1;
+  height: 9vh;
+  width: 100%;
+  background: #880066 url(../assets/images/pianowood.jpg) center/100% no-repeat;
+  z-index: 0;
+}
+
+.single-fretmark:after {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: #806233;
+  left: 50%;
+  bottom: 100%;
+  transform: translate(0%, -100%);
+  text-align: center;
+  color: #be975b;
+  line-height: 27px;
+}
+
+.single-fretmark:nth-child(2):after {
+  content: "7";
+}
+
+.single-fretmark:nth-child(4):after {
+  content: "9";
+}
+
+/* .single-fretmark:last-child:after {
+  content: "12";
+} */
+
+@media only screen and (min-width: 768px) {
+  .single-fretmark:after {
+    height: 35px;
+    width: 35px;
+    line-height: 37px;
+    font-size: 1.5em;
+    transform: translate(-10%, -90%);
+  }
+
+  .note-btn {
+    height: 50px;
+    width: 50px;
+    transform: translate(-15%, -40%);
+  }
+
+  .string:before {
+    width: 13px;
+  }
+  .string:nth-child(3):before {
+    width: 12px;
+  }
+
+  .string:nth-child(4):before {
+    width: 11px;
+  }
+
+  .string:nth-child(5):before {
+    width: 10px;
+  }
+
+  .string:nth-child(6):before {
+    width: 9px;
+  }
+
+  .string:nth-child(7):before {
+    width: 8px;
+  }
+}
