@@ -5,6 +5,7 @@ function reset() {
     pianoKeys[i].classList.contains("hidden")
       ? pianoKeys[i].classList.remove("hidden")
       : null;
+    pianoKeys[i].setAttribute("tabindex", "0");
   }
 }
 
@@ -30,6 +31,7 @@ document.addEventListener("click", (event) => {
     for (let i = 0; i < pianoKeys.length; i++) {
       if (!pianoKeys[i].classList.contains(scale)) {
         pianoKeys[i].classList.add("hidden");
+        pianoKeys[i].removeAttribute("tabindex");
       }
     }
   }
