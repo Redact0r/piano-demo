@@ -15,6 +15,39 @@ function playNote(url) {
   note.play();
 }
 
+function playScale(pianoKeys) {
+  for (let i = 0; i < pianoKeys.length; i++) {
+    setTimeout(() => {
+      pianoKeys[i].focus();
+    }, i * 400);
+    let url = `../assets/sounds/piano/${pianoKeys[i].id}.mp3`;
+    setTimeout(() => {
+      playNote(url);
+    }, i * 400);
+  }
+}
+
+function playScaleReverse(pianoKeys) {
+  for (let i = pianoKeys.length - 1; 0 <= i; i--) {
+    console.log(pianoKeys[i]);
+    setTimeout(() => {
+      pianoKeys[[pianoKeys.length - 1] - i].focus();
+    }, i * 400);
+    let url = `../assets/sounds/piano/${pianoKeys[i].id}.mp3`;
+    setTimeout(() => {
+      playNote(url);
+    }, ([pianoKeys.length - 1] - i) * 400);
+  }
+}
+
+function wait_promise(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(ms);
+    }, ms);
+  });
+}
+
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("selector-menu-li")) {
     reset();
@@ -48,15 +81,13 @@ document.addEventListener("click", (event) => {
 
   if (event.target.classList.contains("play-btn")) {
     const pianoKeys = document.querySelectorAll(".key:not(.hidden)");
+    const timeOut = pianoKeys.length * 401;
 
-    for (let i = 0; i < pianoKeys.length; i++) {
-      setTimeout(() => {
-        pianoKeys[i].focus();
-      }, i * 400);
-      let url = `../assets/sounds/piano/${pianoKeys[i].id}.mp3`;
-      setTimeout(() => {
-        playNote(url);
-      }, i * 400);
+    async function playBothScales() {
+      playScale(pianoKeys);
+      await wait_promise(timeOut);
+      playScaleReverse(pianoKeys);
     }
+    playBothScales();
   }
 });
