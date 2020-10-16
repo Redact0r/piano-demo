@@ -29,7 +29,6 @@ function playScale(pianoKeys) {
 
 function playScaleReverse(pianoKeys) {
   for (let i = pianoKeys.length - 1; 0 <= i; i--) {
-    console.log(pianoKeys[i]);
     setTimeout(() => {
       pianoKeys[[pianoKeys.length - 1] - i].focus();
     }, i * 400);
