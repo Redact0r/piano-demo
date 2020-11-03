@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="guitar-styles.css" />
     <title>Interactive Guitar Master</title>
+    <link rel="shortcut icon" href="#" />
   </head>
   <body class="guitar-body">
     <section
@@ -22,72 +23,83 @@
           <div class="note-fret"></div>
           <div class="note-fret"></div>
         </div>
-        <div class="string">
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
+        <div class="string" id="e-string-big">
+          <div class="note-fret"><button class="note-btn hidden" id="E6-AsBb"></button></div>
+          <div class="note-fret"><button class="note-btn hidden" id="E7-B1"></button></div>
+          <div class="note-fret"><button class="note-btn" id="E8-C2"></button></div>
+          <div class="note-fret"><button class="note-btn" id="E9-CsDb2"></button></div>
+          <div class="note-fret"><button class="note-btn" id="E10-D2"></button></div>
+          <div class="note-fret"><button class="note-btn" id="E11-DsEb2"></button></div>
+          <div class="note-fret"><button class="note-btn" id="E12-E2"></button></div>
         </div>
-        <div class="string">
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
+        <div class="string" id="a-string">
+          <div class="note-fret"><button class="note-btn" id="a6-DsEb2"></button></div>
+          <div class="note-fret"><button class="note-btn" id="a7-E2"></button></div>
+          <div class="note-fret"><button class="note-btn" id="a8-F2"></button></div>
+          <div class="note-fret"><button class="note-btn" id="a9-FsGb"></button></div>
+          <div class="note-fret"><button class="note-btn" id="a10-G2"></button></div>
+          <div class="note-fret"><button class="note-btn" id="a11-GsAb2"></button></div>
           <div class="note-fret single-fretmark">
-            <button class="note-btn"></button>
+            <button class="note-btn" id="a12-A2"></button>
           </div>
         </div>
-        <div class="string">
-          <div class="note-fret"><button class="note-btn"></button></div>
+        <div class="string" id="d-string">
+          <div class="note-fret"><button class="note-btn" id="d6-GsAb2"></button></div>
           <div class="note-fret single-fretmark">
-            <button class="note-btn"></button>
+            <button class="note-btn" id="d7-A2"></button>
           </div>
-          <div class="note-fret"><button class="note-btn"></button></div>
+          <div class="note-fret"><button class="note-btn" id="d8-AsBb2"></button></div>
           <div class="note-fret single-fretmark">
-            <button class="note-btn"></button>
+            <button class="note-btn" id="d9-B2"></button>
           </div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
+          <div class="note-fret"><button class="note-btn" id="d10-C3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="d11-CsDb3"></button></div>
           <div class="note-fret double-fretmark">
-            <button class="note-btn"></button>
+            <button class="note-btn" id="d12-D3"></button>
           </div>
         </div>
-        <div class="string">
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
+        <div class="string" id="g-string">
+          <div class="note-fret"><button class="note-btn" id="g6-CsDb3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="g7-D3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="g8-DsEb3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="g9-E3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="g10-F3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="g11-FsGb3"></button></div>
           <div class="note-fret single-fretmark">
-            <button class="note-btn"></button>
+            <button class="note-btn" id="g12-G3"></button>
           </div>
         </div>
-        <div class="string">
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
+        <div class="string" id="b-string">
+          <div class="note-fret"><button class="note-btn" id="b6-F3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="b7-FsGb3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="b8-G3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="b9-GsAb3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="b10-A3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="b11-AsBb3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="b12-B3"></button></div>
         </div>
-        <div class="string">
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
-          <div class="note-fret"><button class="note-btn"></button></div>
+        <div class="string" id="e-string-little">
+          <div class="note-fret"><button class="note-btn" id="e6-AsBb3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="e7-B3"></button></div>
+          <div class="note-fret"><button class="note-btn" id="e8-C4"></button></div>
+          <div class="note-fret"><button class="note-btn" id="e9-CsDb4"></button></div>
+          <div class="note-fret"><button class="note-btn" id="e10-D4"></button></div>
+          <div class="note-fret"><button class="note-btn" id="e11-DsEb4"></button></div>
+          <div class="note-fret"><button class="note-btn" id="e12-E4"></button></div>
         </div>
       </div>
       <div class="guitar-end"></div>
     </section>
+    <section class="guitar-selector">
+      <div class="selector-menu">
+        <ul class="selector-menu-ul">
+          <button class="play-btn">&#9658; Play</button>
+          <li class="selector-menu-li" value="aeolian">Aeolian</li>
+          <li class="selector-menu-li" value="blues">Blues</li>
+          <li class="selector-menu-li" value="chromatic">Chromatic</li>
+        </ul>
+      </div>
+    </section>
+    <script src="guitar-script.js"></script>
   </body>
 </html>
