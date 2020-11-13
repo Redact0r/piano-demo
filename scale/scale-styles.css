@@ -94,6 +94,7 @@ html {
 
 .dstaff {
   transform: rotate(180deg);
+  filter: drop-shadow(0px -3px 3px rgba(37, 37, 37, 0.699));
 }
 
 .last {
@@ -105,6 +106,10 @@ html {
   top: 223px;
   z-index: 0;
   opacity: 0.9;
+}
+
+.treble {
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -180,6 +185,7 @@ html {
   }
 
   .treble {
+    display: initial;
     width: 14%;
     position: absolute;
     left: -2%;

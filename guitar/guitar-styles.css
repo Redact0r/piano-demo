@@ -95,6 +95,7 @@
 }
 
 .note-btn {
+  cursor: pointer;
   width: 33px;
   height: 33px;
   border-radius: 50%;
@@ -103,9 +104,17 @@
   z-index: 2;
   color: #eee;
   background: teal;
-  opacity: 0.5;
+  opacity: 0.8;
   border: 0;
   margin: -4em 0 0 -0.8em;
+}
+
+.note-btn:active {
+  opacity: 1;
+}
+
+.note-btn:hover {
+  opacity: 1;
 }
 
 .guitar-end {
@@ -117,6 +126,39 @@
   width: 100%;
   background: #880066 url(../assets/images/pianowood.jpg) center/100% no-repeat;
   z-index: 0;
+}
+
+.guitar-selector {
+  text-align: center;
+}
+
+.play-btn {
+  cursor: pointer;
+  position: absolute;
+  width: 5%;
+  height: 8vh;
+  padding-right: 0;
+  filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(17deg)
+    brightness(102%) contrast(104%);
+  background-image: url("../assets/images/gtr-play-btn.png");
+  background-repeat: no-repeat;
+  right: 48.5%;
+  margin-top: 0.5rem;
+  background-size: 90%;
+  z-index: 2;
+  text-align: center;
+}
+
+.play-btn:hover {
+  filter: invert(86%) sepia(4%) saturate(0%) hue-rotate(276deg) brightness(91%)
+    contrast(82%);
+}
+.play-btn:focus {
+  outline: none;
+}
+.play-btn:active {
+  filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(17deg)
+    brightness(102%) contrast(104%);
 }
 
 .single-fretmark:after {
@@ -156,9 +198,11 @@
   }
 
   .note-btn {
+    font-size: 12pt;
     height: 50px;
     width: 50px;
-    transform: translate(-15%, -40%);
+    line-height: 50px;
+    transform: translate(-10%, -15%);
   }
 
   .string:before {

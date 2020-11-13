@@ -1,3 +1,5 @@
+import scaleObj from "../assets/scaleObj.js";
+
 function reset() {
   const pianoKeys = document.querySelectorAll(".key");
 
@@ -47,27 +49,39 @@ function wait_promise(ms) {
   });
 }
 
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("selector-menu-li")) {
+document
+  .getElementById("scale-select-menu")
+  .addEventListener("change", (event) => {
     reset();
 
     //chromatic scale includes all notes
-    if (event.target.getAttribute("value") === "chromatic") {
+    if (event.target.value === "chromatic") {
       return;
     }
 
-    const scale = event.target.getAttribute("value");
+    const scale = scaleObj.find((scale) => scale.name === event.target.value);
+
+    const scaleNotes = scale.notesPlayed;
 
     const pianoKeys = document.querySelectorAll(".key");
 
+    for (let i = 0; i < scaleNotes.length; i++) {
+      for (let j = 0; j < pianoKeys.length; j++) {
+        if (scaleNotes[i] == pianoKeys[j].id) {
+          pianoKeys[j].classList.add(scale.name);
+        }
+      }
+    }
+
     for (let i = 0; i < pianoKeys.length; i++) {
-      if (!pianoKeys[i].classList.contains(scale)) {
+      if (!pianoKeys[i].classList.contains(scale.name)) {
         pianoKeys[i].classList.add("hidden");
         pianoKeys[i].removeAttribute("tabindex");
       }
     }
-  }
+  });
 
+document.addEventListener("click", (event) => {
   if (
     event.target.classList.contains("key") &&
     !event.target.classList.contains("hidden")
