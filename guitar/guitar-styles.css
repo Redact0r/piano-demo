@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400");
 
-.hidden {
-  display: none;
-}
-
 .guitar-body {
   margin: 0;
   padding: 0;
@@ -135,14 +131,14 @@
 .play-btn {
   cursor: pointer;
   position: absolute;
-  width: 5%;
+  width: 15%;
   height: 8vh;
   padding-right: 0;
   filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(17deg)
     brightness(102%) contrast(104%);
   background-image: url("../assets/images/gtr-play-btn.png");
   background-repeat: no-repeat;
-  right: 48.5%;
+  right: 42%;
   margin-top: 0.5rem;
   background-size: 90%;
   z-index: 2;
@@ -177,18 +173,27 @@
 }
 
 .single-fretmark:nth-child(2):after {
-  content: "7";
+  content: "5";
 }
 
 .single-fretmark:nth-child(4):after {
+  content: "7";
+}
+
+.single-fretmark:nth-child(6):after {
   content: "9";
 }
 
-/* .single-fretmark:last-child:after {
-  content: "12";
-} */
+.hidden {
+  display: none;
+}
 
 @media only screen and (min-width: 768px) {
+  .play-btn {
+    width: 5%;
+    right: 48.5%;
+  }
+
   .single-fretmark:after {
     height: 35px;
     width: 35px;

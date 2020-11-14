@@ -42,6 +42,20 @@ function setLastGtrNote(note) {
   }
 }
 
+function setFrets(array) {
+  const frets = document.querySelectorAll(".note-fret");
+  let min = array[0];
+  let max = array[array.length - 1];
+
+  for (let i = 0; i < frets.length; i++) {
+    let fretClass = frets[i].classList[1];
+    let num = fretClass.split("-")[1];
+    if (num > max || num < min) {
+      frets[i].classList.add("hidden");
+    }
+  }
+}
+
 document.addEventListener("click", (e) => {
   let arr = e.target.id.split("-");
   let note = arr[arr.length - 1];
@@ -52,6 +66,7 @@ document.addEventListener("click", (e) => {
 
 document.getElementById("scale-select-menu").addEventListener("change", (e) => {
   const allBtnsInitial = document.querySelectorAll(".note-btn");
+  const allFretsInitial = document.querySelectorAll(".note-fret");
   allBtnsInitial.forEach((btn) => {
     if (btn.classList.contains("hidden")) {
       btn.classList.remove("hidden");
@@ -59,10 +74,18 @@ document.getElementById("scale-select-menu").addEventListener("change", (e) => {
     btn.innerHTML = "";
   });
 
+  allFretsInitial.forEach((fret) => {
+    if (fret.classList.contains("hidden")) {
+      fret.classList.remove("hidden");
+    }
+  });
+
   const scale = scaleObj.find((scale) => scale.name === e.target.value);
+  let frets = scale.frets;
   let fingerings = scale.fingerings;
   let lastGtrNote = scale.lastGtrNote;
 
+  setFrets(frets);
   setLastGtrNote(lastGtrNote);
   loopArray(fingerings);
 
