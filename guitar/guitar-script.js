@@ -160,9 +160,9 @@ document.getElementById("gtr-play-btn").addEventListener("click", (e) => {
 });
 
 window.onload = () => {
-  let menu = document.getElementById("scale-select-menu");
+  const menu = document.getElementById("scale-select-menu");
 
-  options = menu.options;
+  const options = menu.options;
 
   for (let i = 0; i < options.length; i++) {
     if (options[i].value == "aeolian") {
