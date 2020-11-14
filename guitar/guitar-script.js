@@ -158,3 +158,16 @@ document.getElementById("gtr-play-btn").addEventListener("click", (e) => {
   }
   playBothScales();
 });
+
+window.onload = () => {
+  let menu = document.getElementById("scale-select-menu");
+
+  options = menu.options;
+
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].value == "aeolian") {
+      menu.selectedIndex = i;
+      break;
+    }
+  }
+};
