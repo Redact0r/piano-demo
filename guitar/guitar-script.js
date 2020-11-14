@@ -170,4 +170,7 @@ window.onload = () => {
       break;
     }
   }
+  let evt = document.createEvent("HTMLEvents");
+  evt.initEvent("change", false, true);
+  menu.dispatchEvent(evt);
 };
