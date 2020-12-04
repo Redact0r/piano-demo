@@ -67,7 +67,8 @@ document
 
     for (let i = 0; i < scaleNotes.length; i++) {
       for (let j = 0; j < pianoKeys.length; j++) {
-        if (scaleNotes[i] == pianoKeys[j].id) {
+        const pkeyId = scaleNotes[i].split("-")[1];
+        if (pkeyId == pianoKeys[j].id) {
           pianoKeys[j].classList.add(scale.name);
         }
       }
@@ -100,7 +101,29 @@ document.addEventListener("click", (event) => {
       playScale(pianoKeys);
       await wait_promise(timeOut);
       playScaleReverse(pianoKeys);
+      await wait_promise(timeOut);
+      document.activeElement.blur();
     }
     playBothScales();
   }
 });
+
+window.onload = () => {
+  const href = window.location.href;
+  const scale =
+    href.split("/")[2] == "127.0.0.1:8080" ? "aeolian" : href.split("/")[3];
+  const menu = document.getElementById("scale-select-menu");
+
+  const options = menu.options;
+
+  for (let i = 0; i < options.length; i++) {
+    const scaleToFind = scale.toLowerCase();
+    if (options[i].value.toLowerCase() == scaleToFind) {
+      menu.selectedIndex = i;
+      break;
+    }
+  }
+  let evt = document.createEvent("HTMLEvents");
+  evt.initEvent("change", false, true);
+  menu.dispatchEvent(evt);
+};

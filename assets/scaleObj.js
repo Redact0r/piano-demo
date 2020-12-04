@@ -6,7 +6,16 @@
 const scaleObj = [
   {
     name: "2nd_mode_hm",
-    notesPlayed: ["C3", "DsDb3", "DsEb3", "F3", "FsGb3", "A3", "AsBb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-DsDb3-b",
+      "E3-DsEb3-b",
+      "F3-F3",
+      "G3-FsGb3-b",
+      "A3-A3",
+      "B3-AsBb3-b",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E9-2",
@@ -31,7 +40,7 @@ const scaleObj = [
   },
   {
     name: "4_tone",
-    notesPlayed: ["C3", "CsDb3", "F3", "G3", "C4"],
+    notesPlayed: ["C3-C3", "D3-CsDb3-b", "F3-F3", "G3-G3", "C4-C4"],
     fingerings: [
       "E8-1",
       "E9-2",
@@ -49,7 +58,16 @@ const scaleObj = [
   },
   {
     name: "aeolian",
-    notesPlayed: ["C3", "D3", "DsEb3", "F3", "G3", "GsAb3", "AsBb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-D3",
+      "E3-DsEb3-b",
+      "F3-F3",
+      "G3-G3",
+      "A3-GsAb3-b",
+      "B3-AsBb3-b",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E10-3",
@@ -74,7 +92,16 @@ const scaleObj = [
   },
   {
     name: "arabian",
-    notesPlayed: ["C3", "D3", "E3", "F3", "FsGb3", "GsAb3", "AsBb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-D3",
+      "E3-E3",
+      "F3-F3",
+      "G3-FsGb3-b",
+      "A3-GsAb3-b",
+      "B3-AsBb3-b",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-2",
       "E10-4",
@@ -99,7 +126,15 @@ const scaleObj = [
   },
   {
     name: "Augmented",
-    notesPlayed: ["C3", "D3", "E3", "FsGb3", "GsAb3", "AsBb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-D3",
+      "E3-E3",
+      "F3-FsGb3-s",
+      "G3-GsAb3-s",
+      "A3-AsBb3-s",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E10-2",
@@ -123,7 +158,14 @@ const scaleObj = [
   },
   {
     name: "ballinese",
-    notesPlayed: ["C3", "CsDb3", "DsEb3", "G3", "GsAb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-CsDb3-b",
+      "E3-DsEb3-b",
+      "G3-G3",
+      "A3-GsAb3-b",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E9-2",
@@ -144,7 +186,15 @@ const scaleObj = [
   },
   {
     name: "blues",
-    notesPlayed: ["C3", "DsEb3", "F3", "FsGb3", "G3", "AsBb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-DsEb3-b",
+      "F3-F3",
+      "G3-FsGb3-b",
+      "G3-GsGb3-n",
+      "B3-AsBb3-b",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-3",
       "a6-1",
@@ -165,7 +215,16 @@ const scaleObj = [
   },
   {
     name: "byzantine",
-    notesPlayed: ["C3", "CsDb3", "E3", "F3", "G3", "GsAb3", "B3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-CsDb3-b",
+      "E3-E3",
+      "F3-F3",
+      "G3-G3",
+      "A3-GsAb3-b",
+      "B3-B3",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-2",
       "E9-3",
@@ -190,7 +249,7 @@ const scaleObj = [
   },
   {
     name: "chad_gadyo",
-    notesPlayed: ["C3", "D3", "DsEb3", "F3", "G3", "C4"],
+    notesPlayed: ["C3-C3", "D3-D3", "E3-DsEb3-b", "F3-F3", "G3-G3", "C4-C4"],
     fingerings: [
       "E8-1",
       "E10-3",
@@ -212,19 +271,19 @@ const scaleObj = [
   {
     name: "chromatic",
     notesPlayed: [
-      "C3",
-      "CsDb3",
-      "D3",
-      "DsEb3",
-      "E3",
-      "F3",
-      "FsGb3",
-      "G3",
-      "GsAb3",
-      "A3",
-      "AsBb3",
-      "B3",
-      "C4",
+      "C3-C3",
+      "D3-CsDb3-b",
+      "D3-D3-n",
+      "E3-DsEb3-b",
+      "E3-E3-n",
+      "F3-F3",
+      "G3-FsGb3-b",
+      "G3-G3-n",
+      "A3-GsAb3-b",
+      "A3-A3-n",
+      "B3-AsBb3-b",
+      "B3-B3-n",
+      "C4-C4",
     ],
     fingerings: [
       "E8-1",
@@ -262,15 +321,15 @@ const scaleObj = [
   {
     name: "diminished",
     notesPlayed: [
-      "C3",
-      "D3",
-      "DsEb3",
-      "F3",
-      "FsGb3",
-      "GsAb3",
-      "A3",
-      "B3",
-      "C4",
+      "C3-C3",
+      "D3-D3",
+      "E3-DsEb3-b",
+      "F3-F3",
+      "G3-FsGb3-b",
+      "A3-GsAb3-b",
+      "A3-A3-n",
+      "B3-B3",
+      "C4-C4",
     ],
     fingerings: [
       "E8-4",
@@ -297,7 +356,16 @@ const scaleObj = [
   },
   {
     name: "dorian",
-    notesPlayed: ["C3", "D3", "DsEb3", "F3", "G3", "A3", "AsBb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-D3",
+      "E3-DsEb3-b",
+      "F3-F3",
+      "G3-G3",
+      "A3-A3",
+      "B3-AsBb3-b",
+      "C4",
+    ],
     fingerings: [
       "E8-1",
       "E10-3",
@@ -322,7 +390,7 @@ const scaleObj = [
   },
   {
     name: "egyptian",
-    notesPlayed: ["C3", "E3", "G3", "AsBb3", "C4"],
+    notesPlayed: ["C3-C3", "E3-E3", "G3-G3", "A3-AsBb3-b", "C4-C4"],
     fingerings: [
       "E8-1",
       "E12-4",
@@ -340,7 +408,16 @@ const scaleObj = [
   },
   {
     name: "enigmatic",
-    notesPlayed: ["C3", "CsDb3", "E3", "FsGb3", "GsAb3", "AsBb3", "B3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-CsDb3-b",
+      "E3-E3",
+      "G3-FsGb3",
+      "A3-GsAb3-b",
+      "B3-AsBb3-b",
+      "B3-B3-b",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-2",
       "E9-3",
@@ -365,7 +442,16 @@ const scaleObj = [
   },
   {
     name: "ethiopian",
-    notesPlayed: ["C3", "D3", "E3", "F3", "G3", "GsAb3", "B3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-D3",
+      "E3-E3",
+      "F3-F3",
+      "G3-G3",
+      "A3-GsAb3-b",
+      "B3-B3",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-2",
       "E10-4",
@@ -389,7 +475,16 @@ const scaleObj = [
   },
   {
     name: "harmonic_minor",
-    notesPlayed: ["C3", "D3", "DsEb3", "F3", "G3", "GsAb3", "B3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-D3",
+      "E3-DsEb3-b",
+      "F3-F3",
+      "G3-G3",
+      "A3-GsAb3-b",
+      "B3-B3",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E10-3",
@@ -414,7 +509,16 @@ const scaleObj = [
   },
   {
     name: "harmonic_minor_2",
-    notesPlayed: ["C3", "CsDb3", "DsEb3", "F3", "FsGb3", "A3", "AsBb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-CsDb3-b",
+      "E3-DsEb3-b",
+      "F3-F3",
+      "G3-FsGb3-b",
+      "A3-A3",
+      "B3-AsBb3-b",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E9-2",
@@ -439,7 +543,16 @@ const scaleObj = [
   },
   {
     name: "harmonic_minor_3",
-    notesPlayed: ["C3", "D3", "E3", "F3", "GsAb3", "A3", "B3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-D3",
+      "E3-E3",
+      "F3-F3",
+      "G3-GsAb3-b",
+      "A3-A3",
+      "B3-B3",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-2",
       "E10-4",
@@ -463,7 +576,16 @@ const scaleObj = [
   },
   {
     name: "harmonic_minor_4",
-    notesPlayed: ["C3", "D3", "DsEb3", "FsGb3", "G3", "A3", "AsBb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-D3",
+      "E3-DsEb3-b",
+      "F3-FsGb3-s",
+      "G3-G3",
+      "A3-A3",
+      "B3-AsBb3-b",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E10-3",
@@ -488,7 +610,16 @@ const scaleObj = [
   },
   {
     name: "harmonic_minor_5",
-    notesPlayed: ["C3", "CsDb3", "E3", "F3", "G3", "GsAb3", "AsBb3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-CsDb3-b",
+      "E3-E3",
+      "F3-F3",
+      "G3-G3",
+      "A3-GsAb3-b",
+      "B3-AsBb3-b",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E9-2",
@@ -513,7 +644,15 @@ const scaleObj = [
   },
   {
     name: "harmonic_minor_6",
-    notesPlayed: ["C3", "DsEb3", "FsGb3", "G3", "A3", "B3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-DsEb3-s",
+      "F3-FsGb3-s",
+      "G3-G3",
+      "A3-A3",
+      "B3-B3",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E11-3",
@@ -537,7 +676,16 @@ const scaleObj = [
   },
   {
     name: "harmonic_minor_7",
-    notesPlayed: ["C3", "CsDb3", "DsEb3", "E3", "FsGb3", "GsAb3", "A3", "C4"],
+    notesPlayed: [
+      "C3-C3",
+      "D3-CsDb3-b",
+      "E3-DsEb3-b",
+      "E3-E3-n",
+      "F3-FsGb3-s",
+      "G3-GsAb3-s",
+      "A3-A3",
+      "C4-C4",
+    ],
     fingerings: [
       "E8-1",
       "E9-2",

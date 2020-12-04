@@ -155,17 +155,23 @@ document.getElementById("gtr-play-btn").addEventListener("click", (e) => {
     playScale(btnsToPlay);
     await wait_promise(timeOut);
     playScaleReverse(btnsToPlay);
+    await wait_promise(timeOut);
+    document.activeElement.blur();
   }
   playBothScales();
 });
 
 window.onload = () => {
+  const href = window.location.href;
+  const scale =
+    href.split("/")[2] == "127.0.0.1:8080" ? "aeolian" : href.split("/")[3];
   const menu = document.getElementById("scale-select-menu");
 
   const options = menu.options;
 
   for (let i = 0; i < options.length; i++) {
-    if (options[i].value == "aeolian") {
+    const scaleToFind = scale.toLowerCase();
+    if (options[i].value.toLowerCase() == scaleToFind) {
       menu.selectedIndex = i;
       break;
     }

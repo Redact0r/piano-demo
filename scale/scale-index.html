@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="scale-styles.css" />
     <title>Interactive Scale Master</title>
+     <link rel="shortcut icon" href="#" />
   </head>
   <body>
     <section
@@ -15,103 +16,202 @@
       <div class="treble-clef">
         <img class="treble" src="/assets/images/treble.svg" tabindex="1" />
       </div>
+
       <div class="scale-body">
-        <div class="black-line"></div>
-        <img
-          class="note face dstaff"
-          id="C4"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <div class="black-line"></div>
-        <img
-          class="note egbdf dstaff"
-          id="B3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note egbdf dstaff"
-          id="Bb3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note face"
-          id="AsAb3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note face"
-          id="A3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <div class="black-line"></div>
-        <img
-          class="note egbdf"
-          id="G3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note egbdf"
-          id="GsGb3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note face"
-          id="Fs3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note face"
-          id="F3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <div class="black-line"></div>
-        <img
-          class="note egbdf"
-          id="E3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note egbdf"
-          id="Eb3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note egbdf"
-          id="D3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note egbdf"
-          id="DsDb3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note face"
-          id="Cs3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <img
-          class="note face"
-          id="C3"
-          src="/assets/images/qnote.svg"
-          tabindex="1"
-        />
-        <div class="black-line last"></div>
+        <div class="line-container">
+          <div class="black-line"></div>
+          <div class="black-line"></div>
+          <div class="black-line"></div>
+          <div class="black-line"></div>
+          <div class="black-line"></div>
+        </div>
+        <div class="note-container">
+          <div id="C4" class="part-container">
+            <div class="online"></div>
+            <div class="under">
+              <img
+                class="note face"
+                id="C4-C4"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+            </div>
+          </div>
+          <div id="B3" class="part-container">
+            <img
+              class="note egbdf"
+              id="B3-C4"
+              src="/assets/images/qnote.svg"
+              tabindex="1"
+            />
+            <img
+              class="note egbdf"
+              id="B3-AsBb3"
+              src="/assets/images/qnote.svg"
+              tabindex="1"
+            />
+          </div>
+            <div id="A3" class="part-container">
+              <img
+                class="note face"
+                id="A3-AsBb3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+              <img
+                class="note face"
+                id="A3-GsAb3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+            </div>
+            <div id="G3" class="part-container">
+              <img
+                class="note egbdf"
+                id="G3-GsAb3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+              <img
+                class="note egbdf"
+                id="G3-FsGb3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+            </div>
+            <div id="F3" class="part-container">
+              <img
+                class="note face"
+                id="F3-FsGb3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+              <img
+                class="note face"
+                id="F3-E3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+            </div>
+            <div id="E3" class="part-container">
+              <img
+                class="note egbdf"
+                id="E3-F3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+              <img
+                class="note egbdf"
+                id="E3-DsEb3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+            </div>
+            <div id="D3" class="part-container">
+              <img
+                class="note"
+                id="D3-DsEb3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+              <img
+                class="note"
+                id="D3-CsDb3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+            </div>
+            <div id="C3" class="part-container">
+              <img
+                class="note face"
+                id="C3-CsDb3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+              <img
+                class="note face"
+                id="C3-C3"
+                src="/assets/images/qnote.svg"
+                tabindex="1"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- <div class="black-line last"></div> -->
       </div>
     </section>
+    <section class="scale-selector">
+        <div class="selector-menu">
+          <button class="play-btn" id="staff-play-btn">&#9658; Play</button>
+          <select name="scale-selector" id="scale-select-menu">
+            <option value="2nd_mode_hm">2nd_mode_hm</option>
+            <option value="4_tone">4_tone</option>
+            <option value="aeolian">aeolian</option>
+            <option value="arabian">arabian</option>
+            <option value="Augmented">Augmented</option>
+            <option value="ballinese">ballinese</option>
+            <option value="blues">blues</option>
+            <option value="byzantine">byzantine</option>
+            <option value="chad_gadyo">chad_gadyo</option>
+            <option value="chromatic" >chromatic</option>
+            <option value="diminished">diminished</option>
+            <option value="dorian">dorian</option>
+            <option value="egyptian">egyptian</option>
+            <option value="enigmatic">enigmatic</option>
+            <option value="ethiopian">ethiopian</option>
+            <option value="harmonic_minor">harmonic_minor</option>
+            <option value="harmonic_minor_2">harmonic_minor_2</option>
+            <option value="harmonic_minor_3">harmonic_minor_3</option>
+            <option value="harmonic_minor_4">harmonic_minor_4</option>
+            <option value="harmonic_minor_5">harmonic_minor_5</option>
+            <option value="harmonic_minor_6">harmonic_minor_6</option>
+            <option value="harmonic_minor_7">harmonic_minor_7</option>
+            <option value="Hawaiian">Hawaiian</option>
+            <option value="hindu">hindu</option>
+            <option value="hira_joshi">hira_joshi</option>
+            <option value="Hungarian_minor">Hungarian_minor</option>
+            <option value="indian_1">indian_1</option>
+            <option value="indian_2">indian_2</option>
+            <option value="Ionian">Ionian</option>
+            <option value="irak">irak</option>
+            <option value="iwato">iwato</option>
+            <option value="kokin_joshi">kokin_joshi</option>
+            <option value="kumoi">kumoi</option>
+            <option value="kumoi_nat_2nd">kumoi_nat_2nd</option>
+            <option value="locrian">locrian</option>
+            <option value="lydian">lydian</option>
+            <option value="lydian_flat_7">lydian_flat_7</option>
+            <option value="mahavishnu">mahavishnu</option>
+            <option value="major">major</option>
+            <option value="major_penta">major_penta</option>
+            <option value="melodic_minor">melodic_minor</option>
+            <option value="melodic_minor_2">melodic_minor_2</option>
+            <option value="melodic_minor_3">melodic_minor_3</option>
+            <option value="melodic_minor_4">melodic_minor_4</option>
+            <option value="melodic_minor_5">melodic_minor_5</option>
+            <option value="melodic_minor_6">melodic_minor_6</option>
+            <option value="melodic_minor_7">melodic_minor_7</option>
+            <option value="minor_penta">minor_penta</option>
+            <option value="mixo">mixo</option>
+            <option value="mixolydian">mixolydian</option>
+            <option value="neapolitan">neapolitan</option>
+            <option value="neapolitan_minor">neapolitan_minor</option>
+            <option value="neutral_penta">neutral_penta</option>
+            <option value="oriental">oriental</option>
+            <option value="oriental_1">oriental_1</option>
+            <option value="oriental_2">oriental_2</option>
+            <option value="oriental_3">oriental_3</option>
+            <option value="Pyongio">P'yongio</option>
+            <option value="phrygian">phrygian</option>
+            <option value="rhaoui">rhaoui</option>
+            <option value="ritusen">ritusen</option>
+            <option value="scriabin">scriabin</option>
+            <option value="spanish_8">spanish_8</option>
+            <option value="taishikicho">taishikicho</option>
+            <option value="whole_tone">whole_tone</option>
+          </select>
+        </div>
+      </section>
+      <script type="module" src="scale-script.js"></script>
   </body>
 </html>
