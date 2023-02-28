@@ -7,331 +7,332 @@
     <title>Interactive Guitar Master</title>
     <link rel="shortcut icon" href="#" />
   </head>
-  <body class="guitar-body">
-    <section
-      role="guitar"
-      class="guitar-instrument"
-      aria-roledescription="interactive guitar"
-    >
-      <div class="fretboard">
-        <div class="fake-string">
-          <div class="note-fret fret-4"></div>
-          <div class="note-fret fret-5"></div>
-          <div class="note-fret fret-6"></div>
-          <div class="note-fret fret-7"></div>
-          <div class="note-fret fret-8"></div>
-          <div class="note-fret fret-9"></div>
-          <div class="note-fret fret-10"></div>
-          <div class="note-fret fret-11"></div>
-          <div class="note-fret fret-12"></div>
-          <div class="note-fret fret-13"></div>
-          <div class="note-fret fret-14"></div>
-          <div class="note-fret fret-15"></div>
+  <body>
+    <section class="guitar-body">
+      <section
+        role="guitar"
+        class="guitar-instrument"
+        aria-roledescription="interactive guitar"
+      >
+        <div class="fretboard">
+          <div class="fake-string">
+            <div class="note-fret fret-4"></div>
+            <div class="note-fret fret-5"></div>
+            <div class="note-fret fret-6"></div>
+            <div class="note-fret fret-7"></div>
+            <div class="note-fret fret-8"></div>
+            <div class="note-fret fret-9"></div>
+            <div class="note-fret fret-10"></div>
+            <div class="note-fret fret-11"></div>
+            <div class="note-fret fret-12"></div>
+            <div class="note-fret fret-13"></div>
+            <div class="note-fret fret-14"></div>
+            <div class="note-fret fret-15"></div>
+          </div>
+          <div class="string" id="e-string-big">
+            <div class="note-fret fret-4">
+              <button class="note-btn" id="E4-GsAb1"></button>
+            </div>
+            <div class="note-fret fret-5">
+              <button class="note-btn" id="E5-A1"></button>
+            </div>
+            <div class="note-fret fret-6">
+              <button class="note-btn" id="E6-AsBb1"></button>
+            </div>
+            <div class="note-fret fret-7">
+              <button class="note-btn" id="E7-B1"></button>
+            </div>
+            <div class="note-fret fret-8">
+              <button class="note-btn" id="E8-C2"></button>
+            </div>
+            <div class="note-fret fret-9">
+              <button class="note-btn" id="E9-CsDb2"></button>
+            </div>
+            <div class="note-fret fret-10">
+              <button class="note-btn" id="E10-D2"></button>
+            </div>
+            <div class="note-fret fret-11">
+              <button class="note-btn" id="E11-DsEb2"></button>
+            </div>
+            <div class="note-fret fret-12">
+              <button class="note-btn" id="E12-E2"></button>
+            </div>
+            <div class="note-fret fret-13">
+              <button class="note-btn" id="E13-F2"></button>
+            </div>
+            <div class="note-fret fret-14">
+              <button class="note-btn" id="E14-FsGb2"></button>
+            </div>
+            <div class="note-fret fret-15">
+              <button class="note-btn" id="E1-G2"></button>
+            </div>
+          </div>
+          <div class="string" id="a-string">
+            <div class="note-fret fret-4">
+              <button class="note-btn" id="a4-CsDb2"></button>
+            </div>
+            <div class="note-fret fret-5">
+              <button class="note-btn" id="a5-D2"></button>
+            </div>
+            <div class="note-fret fret-6">
+              <button class="note-btn" id="a6-DsEb2"></button>
+            </div>
+            <div class="note-fret fret-7">
+              <button class="note-btn" id="a7-E2"></button>
+            </div>
+            <div class="note-fret fret-8">
+              <button class="note-btn" id="a8-F2"></button>
+            </div>
+            <div class="note-fret fret-9">
+              <button class="note-btn" id="a9-FsGb2"></button>
+            </div>
+            <div class="note-fret fret-10">
+              <button class="note-btn" id="a10-G2"></button>
+            </div>
+            <div class="note-fret fret-11">
+              <button class="note-btn" id="a11-GsAb2"></button>
+            </div>
+            <div class="note-fret fret-12">
+              <button class="note-btn" id="a12-AsBb2"></button>
+            </div>
+            <div class="note-fret fret-13">
+              <button class="note-btn" id="a13-B2"></button>
+            </div>
+            <div class="note-fret fret-14">
+              <button class="note-btn" id="a14-C3"></button>
+            </div>
+            <div class="note-fret fret-15">
+              <button class="note-btn" id="a15-CsDb3"></button>
+            </div>
+          </div>
+          <div class="string" id="d-string">
+            <div class="note-fret fret-4">
+              <button class="note-btn" id="d4-FsGb2"></button>
+            </div>
+            <div class="note-fret fret-5">
+              <button class="note-btn" id="d5-G2"></button>
+            </div>
+            <div class="note-fret fret-6">
+              <button class="note-btn" id="d6-GsAb2"></button>
+            </div>
+            <div class="note-fret fret-7">
+              <button class="note-btn" id="d7-A2"></button>
+            </div>
+            <div class="note-fret fret-8">
+              <button class="note-btn" id="d8-AsBb2"></button>
+            </div>
+            <div class="note-fret fret-9">
+              <button class="note-btn" id="d9-B2"></button>
+            </div>
+            <div class="note-fret fret-10">
+              <button class="note-btn" id="d10-C3"></button>
+            </div>
+            <div class="note-fret fret-11">
+              <button class="note-btn" id="d11-CsDb3"></button>
+            </div>
+            <div class="note-fret fret-12">
+              <button class="note-btn" id="d12-D3"></button>
+            </div>
+            <div class="note-fret fret-13">
+              <button class="note-btn" id="d13-DsEb3"></button>
+            </div>
+            <div class="note-fret fret-14">
+              <button class="note-btn" id="d14-E3"></button>
+            </div>
+            <div class="note-fret fret-15">
+              <button class="note-btn" id="d15-F3"></button>
+            </div>
+          </div>
+          <div class="string" id="g-string">
+            <div class="note-fret fret-4">
+              <button class="note-btn" id="g4-B2"></button>
+            </div>
+            <div class="note-fret fret-5">
+              <button class="note-btn" id="g5-C3"></button>
+            </div>
+            <div class="note-fret fret-6">
+              <button class="note-btn" id="g6-CsDb3"></button>
+            </div>
+            <div class="note-fret fret-7">
+              <button class="note-btn" id="g7-D3"></button>
+            </div>
+            <div class="note-fret fret-8">
+              <button class="note-btn" id="g8-DsEb3"></button>
+            </div>
+            <div class="note-fret fret-9">
+              <button class="note-btn" id="g9-E3"></button>
+            </div>
+            <div class="note-fret fret-10">
+              <button class="note-btn" id="g10-F3"></button>
+            </div>
+            <div class="note-fret fret-11">
+              <button class="note-btn" id="g11-FsGb3"></button>
+            </div>
+            <div class="note-fret fret-12">
+              <button class="note-btn" id="g12-G3"></button>
+            </div>
+            <div class="note-fret fret-13">
+              <button class="note-btn" id="g13-GsAb3"></button>
+            </div>
+            <div class="note-fret fret-14">
+              <button class="note-btn" id="g14-A3"></button>
+            </div>
+            <div class="note-fret fret-15">
+              <button class="note-btn" id="g15-AsBb3"></button>
+            </div>
+          </div>
+          <div class="string" id="b-string">
+            <div class="note-fret fret-4">
+              <button class="note-btn" id="b4-DsEb3"></button>
+            </div>
+            <div class="note-fret fret-5">
+              <button class="note-btn" id="b5-E3"></button>
+            </div>
+            <div class="note-fret fret-6">
+              <button class="note-btn" id="b6-F3"></button>
+            </div>
+            <div class="note-fret fret-7">
+              <button class="note-btn" id="b7-FsGb3"></button>
+            </div>
+            <div class="note-fret fret-8">
+              <button class="note-btn" id="b8-G3"></button>
+            </div>
+            <div class="note-fret fret-9">
+              <button class="note-btn" id="b9-GsAb3"></button>
+            </div>
+            <div class="note-fret fret-10">
+              <button class="note-btn" id="b10-A3"></button>
+            </div>
+            <div class="note-fret fret-11">
+              <button class="note-btn" id="b11-AsBb3"></button>
+            </div>
+            <div class="note-fret fret-12">
+              <button class="note-btn" id="b12-B3"></button>
+            </div>
+            <div class="note-fret fret-13">
+              <button class="note-btn" id="b13-C4"></button>
+            </div>
+            <div class="note-fret fret-14">
+              <button class="note-btn" id="b14-CsDb4"></button>
+            </div>
+            <div class="note-fret fret-15">
+              <button class="note-btn" id="b15-D4"></button>
+            </div>
+          </div>
+          <div class="string" id="e-string-little">
+            <div class="note-fret fret-4">
+              <button class="note-btn" id="e4-GsAb3"></button>
+            </div>
+            <div class="note-fret fret-5">
+              <button class="note-btn" id="e5-A3"></button>
+            </div>
+            <div class="note-fret fret-6">
+              <button class="note-btn" id="e6-AsBb3"></button>
+            </div>
+            <div class="note-fret fret-7">
+              <button class="note-btn" id="e7-B3"></button>
+            </div>
+            <div class="note-fret fret-8">
+              <button class="note-btn" id="e8-C4"></button>
+            </div>
+            <div class="note-fret fret-9">
+              <button class="note-btn" id="e9-CsDb4"></button>
+            </div>
+            <div class="note-fret fret-10">
+              <button class="note-btn" id="e10-D4"></button>
+            </div>
+            <div class="note-fret fret-11">
+              <button class="note-btn" id="e11-DsEb4"></button>
+            </div>
+            <div class="note-fret fret-12">
+              <button class="note-btn" id="e12-E4"></button>
+            </div>
+            <div class="note-fret fret-13">
+              <button class="note-btn" id="e13-F4"></button>
+            </div>
+            <div class="note-fret fret-14">
+              <button class="note-btn" id="e14-FsGb4"></button>
+            </div>
+            <div class="note-fret fret-15">
+              <button class="note-btn" id="e15-G4"></button>
+            </div>
+          </div>
         </div>
-        <div class="string" id="e-string-big">
-          <div class="note-fret fret-4">
-            <button class="note-btn" id="E4-GsAb1"></button>
-          </div>
-          <div class="note-fret fret-5">
-            <button class="note-btn" id="E5-A1"></button>
-          </div>
-          <div class="note-fret fret-6">
-            <button class="note-btn" id="E6-AsBb1"></button>
-          </div>
-          <div class="note-fret fret-7">
-            <button class="note-btn" id="E7-B1"></button>
-          </div>
-          <div class="note-fret fret-8">
-            <button class="note-btn" id="E8-C2"></button>
-          </div>
-          <div class="note-fret fret-9">
-            <button class="note-btn" id="E9-CsDb2"></button>
-          </div>
-          <div class="note-fret fret-10">
-            <button class="note-btn" id="E10-D2"></button>
-          </div>
-          <div class="note-fret fret-11">
-            <button class="note-btn" id="E11-DsEb2"></button>
-          </div>
-          <div class="note-fret fret-12">
-            <button class="note-btn" id="E12-E2"></button>
-          </div>
-          <div class="note-fret fret-13">
-            <button class="note-btn" id="E13-F2"></button>
-          </div>
-          <div class="note-fret fret-14">
-            <button class="note-btn" id="E14-FsGb2"></button>
-          </div>
-          <div class="note-fret fret-15">
-            <button class="note-btn" id="E1-G2"></button>
-          </div>
+        <div class="guitar-end">
+          <div class="gtr-play-btn" id="gtr-play-btn" tabindex="1"></div>
         </div>
-        <div class="string" id="a-string">
-          <div class="note-fret fret-4">
-            <button class="note-btn" id="a4-CsDb2"></button>
-          </div>
-          <div class="note-fret fret-5">
-            <button class="note-btn" id="a5-D2"></button>
-          </div>
-          <div class="note-fret fret-6">
-            <button class="note-btn" id="a6-DsEb2"></button>
-          </div>
-          <div class="note-fret fret-7">
-            <button class="note-btn" id="a7-E2"></button>
-          </div>
-          <div class="note-fret fret-8">
-            <button class="note-btn" id="a8-F2"></button>
-          </div>
-          <div class="note-fret fret-9">
-            <button class="note-btn" id="a9-FsGb2"></button>
-          </div>
-          <div class="note-fret fret-10">
-            <button class="note-btn" id="a10-G2"></button>
-          </div>
-          <div class="note-fret fret-11">
-            <button class="note-btn" id="a11-GsAb2"></button>
-          </div>
-          <div class="note-fret fret-12 single-fretmark">
-            <button class="note-btn" id="a12-AsBb2"></button>
-          </div>
-          <div class="note-fret fret-13">
-            <button class="note-btn" id="a13-B2"></button>
-          </div>
-          <div class="note-fret fret-14">
-            <button class="note-btn" id="a14-C3"></button>
-          </div>
-          <div class="note-fret fret-15">
-            <button class="note-btn" id="a15-CsDb3"></button>
-          </div>
+      </section>
+      <section class="guitar-selector">
+        <div class="selector-menu">
+          <select name="scale-selector" id="all-scale-select-menu">
+            <option value="2nd_mode_hm">2nd_mode_hm</option>
+            <option value="4_tone">4_tone</option>
+            <option value="aeolian">aeolian</option>
+            <option value="arabian">arabian</option>
+            <option value="Augmented">Augmented</option>
+            <option value="ballinese">ballinese</option>
+            <option value="blues">blues</option>
+            <option value="byzantine">byzantine</option>
+            <option value="chad_gadyo">chad_gadyo</option>
+            <option value="chromatic">chromatic</option>
+            <option value="diminished">diminished</option>
+            <option value="dorian">dorian</option>
+            <option value="egyptian">egyptian</option>
+            <option value="enigmatic">enigmatic</option>
+            <option value="ethiopian">ethiopian</option>
+            <option value="harmonic_minor">harmonic_minor</option>
+            <option value="harmonic_minor_2">harmonic_minor_2</option>
+            <option value="harmonic_minor_3">harmonic_minor_3</option>
+            <option value="harmonic_minor_4">harmonic_minor_4</option>
+            <option value="harmonic_minor_5">harmonic_minor_5</option>
+            <option value="harmonic_minor_6">harmonic_minor_6</option>
+            <option value="harmonic_minor_7">harmonic_minor_7</option>
+            <option value="Hawaiian">Hawaiian</option>
+            <option value="hindu">hindu</option>
+            <option value="hira_joshi">hira_joshi</option>
+            <option value="Hungarian_minor">Hungarian_minor</option>
+            <option value="indian_1">indian_1</option>
+            <option value="indian_2">indian_2</option>
+            <option value="Ionian">Ionian</option>
+            <option value="irak">irak</option>
+            <option value="iwato">iwato</option>
+            <option value="kokin_joshi">kokin_joshi</option>
+            <option value="kumoi">kumoi</option>
+            <option value="kumoi_nat_2nd">kumoi_nat_2nd</option>
+            <option value="locrian">locrian</option>
+            <option value="lydian">lydian</option>
+            <option value="lydian_flat_7">lydian_flat_7</option>
+            <option value="mahavishnu">mahavishnu</option>
+            <option value="major">major</option>
+            <option value="major_penta">major_penta</option>
+            <option value="melodic_minor">melodic_minor</option>
+            <option value="melodic_minor_2">melodic_minor_2</option>
+            <option value="melodic_minor_3">melodic_minor_3</option>
+            <option value="melodic_minor_4">melodic_minor_4</option>
+            <option value="melodic_minor_5">melodic_minor_5</option>
+            <option value="melodic_minor_6">melodic_minor_6</option>
+            <option value="melodic_minor_7">melodic_minor_7</option>
+            <option value="minor_penta">minor_penta</option>
+            <option value="mixo">mixo</option>
+            <option value="mixolydian">mixolydian</option>
+            <option value="neapolitan">neapolitan</option>
+            <option value="neapolitan_minor">neapolitan_minor</option>
+            <option value="neutral_penta">neutral_penta</option>
+            <option value="oriental">oriental</option>
+            <option value="oriental_1">oriental_1</option>
+            <option value="oriental_2">oriental_2</option>
+            <option value="oriental_3">oriental_3</option>
+            <option value="Pyongio">P'yongio</option>
+            <option value="phrygian">phrygian</option>
+            <option value="rhaoui">rhaoui</option>
+            <option value="ritusen">ritusen</option>
+            <option value="scriabin">scriabin</option>
+            <option value="spanish_8">spanish_8</option>
+            <option value="taishikicho">taishikicho</option>
+            <option value="whole_tone">whole_tone</option>
+          </select>
         </div>
-        <div class="string" id="d-string">
-          <div class="note-fret fret-4">
-            <button class="note-btn" id="d4-FsGb2"></button>
-          </div>
-          <div class="note-fret fret-5 single-fretmark">
-            <button class="note-btn" id="d5-G2"></button>
-          </div>
-          <div class="note-fret fret-6">
-            <button class="note-btn" id="d6-GsAb2"></button>
-          </div>
-          <div class="note-fret fret-7 single-fretmark">
-            <button class="note-btn" id="d7-A2"></button>
-          </div>
-          <div class="note-fret fret-8">
-            <button class="note-btn" id="d8-AsBb2"></button>
-          </div>
-          <div class="note-fret fret-9 single-fretmark">
-            <button class="note-btn" id="d9-B2"></button>
-          </div>
-          <div class="note-fret fret-10">
-            <button class="note-btn" id="d10-C3"></button>
-          </div>
-          <div class="note-fret fret-11">
-            <button class="note-btn" id="d11-CsDb3"></button>
-          </div>
-          <div class="note-fret fret-12 double-fretmark">
-            <button class="note-btn" id="d12-D3"></button>
-          </div>
-          <div class="note-fret fret-13">
-            <button class="note-btn" id="d13-DsEb3"></button>
-          </div>
-          <div class="note-fret fret-14">
-            <button class="note-btn" id="d14-E3"></button>
-          </div>
-          <div class="note-fret fret-15">
-            <button class="note-btn" id="d15-F3"></button>
-          </div>
-        </div>
-        <div class="string" id="g-string">
-          <div class="note-fret fret-4">
-            <button class="note-btn" id="g4-B2"></button>
-          </div>
-          <div class="note-fret fret-5">
-            <button class="note-btn" id="g5-C3"></button>
-          </div>
-          <div class="note-fret fret-6">
-            <button class="note-btn" id="g6-CsDb3"></button>
-          </div>
-          <div class="note-fret fret-7">
-            <button class="note-btn" id="g7-D3"></button>
-          </div>
-          <div class="note-fret fret-8">
-            <button class="note-btn" id="g8-DsEb3"></button>
-          </div>
-          <div class="note-fret fret-9">
-            <button class="note-btn" id="g9-E3"></button>
-          </div>
-          <div class="note-fret fret-10">
-            <button class="note-btn" id="g10-F3"></button>
-          </div>
-          <div class="note-fret fret-11">
-            <button class="note-btn" id="g11-FsGb3"></button>
-          </div>
-          <div class="note-fret fret-12 single-fretmark">
-            <button class="note-btn" id="g12-G3"></button>
-          </div>
-          <div class="note-fret fret-13">
-            <button class="note-btn" id="g13-GsAb3"></button>
-          </div>
-          <div class="note-fret fret-14">
-            <button class="note-btn" id="g14-A3"></button>
-          </div>
-          <div class="note-fret fret-15">
-            <button class="note-btn" id="g15-AsBb3"></button>
-          </div>
-        </div>
-        <div class="string" id="b-string">
-          <div class="note-fret fret-4">
-            <button class="note-btn" id="b4-DsEb3"></button>
-          </div>
-          <div class="note-fret fret-5">
-            <button class="note-btn" id="b5-E3"></button>
-          </div>
-          <div class="note-fret fret-6">
-            <button class="note-btn" id="b6-F3"></button>
-          </div>
-          <div class="note-fret fret-7">
-            <button class="note-btn" id="b7-FsGb3"></button>
-          </div>
-          <div class="note-fret fret-8">
-            <button class="note-btn" id="b8-G3"></button>
-          </div>
-          <div class="note-fret fret-9">
-            <button class="note-btn" id="b9-GsAb3"></button>
-          </div>
-          <div class="note-fret fret-10">
-            <button class="note-btn" id="b10-A3"></button>
-          </div>
-          <div class="note-fret fret-11">
-            <button class="note-btn" id="b11-AsBb3"></button>
-          </div>
-          <div class="note-fret fret-12">
-            <button class="note-btn" id="b12-B3"></button>
-          </div>
-          <div class="note-fret fret-13">
-            <button class="note-btn" id="b13-C4"></button>
-          </div>
-          <div class="note-fret fret-14">
-            <button class="note-btn" id="b14-CsDb4"></button>
-          </div>
-          <div class="note-fret fret-15">
-            <button class="note-btn" id="b15-D4"></button>
-          </div>
-        </div>
-        <div class="string" id="e-string-little">
-          <div class="note-fret fret-4">
-            <button class="note-btn" id="e4-GsAb3"></button>
-          </div>
-          <div class="note-fret fret-5">
-            <button class="note-btn" id="e5-A3"></button>
-          </div>
-          <div class="note-fret fret-6">
-            <button class="note-btn" id="e6-AsBb3"></button>
-          </div>
-          <div class="note-fret fret-7">
-            <button class="note-btn" id="e7-B3"></button>
-          </div>
-          <div class="note-fret fret-8">
-            <button class="note-btn" id="e8-C4"></button>
-          </div>
-          <div class="note-fret fret-9">
-            <button class="note-btn" id="e9-CsDb4"></button>
-          </div>
-          <div class="note-fret fret-10">
-            <button class="note-btn" id="e10-D4"></button>
-          </div>
-          <div class="note-fret fret-11">
-            <button class="note-btn" id="e11-DsEb4"></button>
-          </div>
-          <div class="note-fret fret-12">
-            <button class="note-btn" id="e12-E4"></button>
-          </div>
-          <div class="note-fret fret-13">
-            <button class="note-btn" id="e13-F4"></button>
-          </div>
-          <div class="note-fret fret-14">
-            <button class="note-btn" id="e14-FsGb4"></button>
-          </div>
-          <div class="note-fret fret-15">
-            <button class="note-btn" id="e15-G4"></button>
-          </div>
-        </div>
-      </div>
-      <div class="guitar-end">
-        <div class="play-btn" id="gtr-play-btn" tabindex="1"></div>
-      </div>
+      </section>
     </section>
-    <section class="guitar-selector">
-      <div class="selector-menu">
-        <select name="scale-selector" id="scale-select-menu">
-          <option value="2nd_mode_hm">2nd_mode_hm</option>
-          <option value="4_tone">4_tone</option>
-          <option value="aeolian">aeolian</option>
-          <option value="arabian">arabian</option>
-          <option value="Augmented">Augmented</option>
-          <option value="ballinese">ballinese</option>
-          <option value="blues">blues</option>
-          <option value="byzantine">byzantine</option>
-          <option value="chad_gadyo">chad_gadyo</option>
-          <option value="chromatic">chromatic</option>
-          <option value="diminished">diminished</option>
-          <option value="dorian">dorian</option>
-          <option value="egyptian">egyptian</option>
-          <option value="enigmatic">enigmatic</option>
-          <option value="ethiopian">ethiopian</option>
-          <option value="harmonic_minor">harmonic_minor</option>
-          <option value="harmonic_minor_2">harmonic_minor_2</option>
-          <option value="harmonic_minor_3">harmonic_minor_3</option>
-          <option value="harmonic_minor_4">harmonic_minor_4</option>
-          <option value="harmonic_minor_5">harmonic_minor_5</option>
-          <option value="harmonic_minor_6">harmonic_minor_6</option>
-          <option value="harmonic_minor_7">harmonic_minor_7</option>
-          <option value="Hawaiian">Hawaiian</option>
-          <option value="hindu">hindu</option>
-          <option value="hira_joshi">hira_joshi</option>
-          <option value="Hungarian_minor">Hungarian_minor</option>
-          <option value="indian_1">indian_1</option>
-          <option value="indian_2">indian_2</option>
-          <option value="Ionian">Ionian</option>
-          <option value="irak">irak</option>
-          <option value="iwato">iwato</option>
-          <option value="kokin_joshi">kokin_joshi</option>
-          <option value="kumoi">kumoi</option>
-          <option value="kumoi_nat_2nd">kumoi_nat_2nd</option>
-          <option value="locrian">locrian</option>
-          <option value="lydian">lydian</option>
-          <option value="lydian_flat_7">lydian_flat_7</option>
-          <option value="mahavishnu">mahavishnu</option>
-          <option value="major">major</option>
-          <option value="major_penta">major_penta</option>
-          <option value="melodic_minor">melodic_minor</option>
-          <option value="melodic_minor_2">melodic_minor_2</option>
-          <option value="melodic_minor_3">melodic_minor_3</option>
-          <option value="melodic_minor_4">melodic_minor_4</option>
-          <option value="melodic_minor_5">melodic_minor_5</option>
-          <option value="melodic_minor_6">melodic_minor_6</option>
-          <option value="melodic_minor_7">melodic_minor_7</option>
-          <option value="minor_penta">minor_penta</option>
-          <option value="mixo">mixo</option>
-          <option value="mixolydian">mixolydian</option>
-          <option value="neapolitan">neapolitan</option>
-          <option value="neapolitan_minor">neapolitan_minor</option>
-          <option value="neutral_penta">neutral_penta</option>
-          <option value="oriental">oriental</option>
-          <option value="oriental_1">oriental_1</option>
-          <option value="oriental_2">oriental_2</option>
-          <option value="oriental_3">oriental_3</option>
-          <option value="Pyongio">P'yongio</option>
-          <option value="phrygian">phrygian</option>
-          <option value="rhaoui">rhaoui</option>
-          <option value="ritusen">ritusen</option>
-          <option value="scriabin">scriabin</option>
-          <option value="spanish_8">spanish_8</option>
-          <option value="taishikicho">taishikicho</option>
-          <option value="whole_tone">whole_tone</option>
-        </select>
-      </div>
-    </section>
-    <script type="module" src="guitar-script.js"></script>
   </body>
 </html>

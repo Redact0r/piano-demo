@@ -4,8 +4,8 @@ function reset() {
   const pianoKeys = document.querySelectorAll(".key");
 
   for (let i = 0; i < pianoKeys.length; i++) {
-    pianoKeys[i].classList.contains("hidden")
-      ? pianoKeys[i].classList.remove("hidden")
+    pianoKeys[i].classList.contains("p-hidden")
+      ? pianoKeys[i].classList.remove("p-hidden")
       : null;
     pianoKeys[i].setAttribute("tabindex", "0");
   }
@@ -14,52 +14,44 @@ function reset() {
 function playNote(url) {
   const note = new Audio(url);
 
-  note.play();
+  note.play().catch((e) => console.error(`Audio error: ${e.message}`));
 }
 
-function playScale(pianoKeys) {
-  for (let i = 0; i < pianoKeys.length; i++) {
-    setTimeout(() => {
-      pianoKeys[i].focus();
-    }, i * 400);
-    let url = `../assets/sounds/piano/${pianoKeys[i].id}.mp3`;
-    setTimeout(() => {
-      playNote(url);
-    }, i * 400);
-  }
-}
+function displayCorrectAccents(scaleNotes) {
+  const blackKeys = document.querySelectorAll(".key.black:not(.p-hidden)");
 
-function playScaleReverse(pianoKeys) {
-  for (let i = pianoKeys.length - 1; 0 <= i; i--) {
-    setTimeout(() => {
-      pianoKeys[[pianoKeys.length - 1] - i].focus();
-    }, i * 400);
-    let url = `../assets/sounds/piano/${pianoKeys[i].id}.mp3`;
-    setTimeout(() => {
-      playNote(url);
-    }, ([pianoKeys.length - 1] - i) * 400);
-  }
-}
-
-function wait_promise(ms) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(ms);
-    }, ms);
+  Object.values(blackKeys).map((note) => {
+    for (let i = 0; i < scaleNotes.length; i++) {
+      const note_id = note.id.slice(1, note.id.length);
+      const scaleNoteSplit = scaleNotes[i].split("-");
+      const accent = scaleNoteSplit.pop();
+      const scaleNote = scaleNoteSplit.join("-");
+      if (scaleNoteSplit[1] == note_id && accent !== "n") {
+        if (accent == "b") {
+          const newNoteId = note_id.substr(2, 1);
+          const noteIdWithAccent = newNoteId + "♭";
+          const noteText = note.children[0];
+          return (noteText.innerHTML = noteIdWithAccent);
+        }
+        if (accent == "s") {
+          const newNoteId = note_id.substr(0, 1);
+          const noteIdWithAccent = newNoteId + "♯";
+          const noteText = note.children[0];
+          return (noteText.innerHTML = noteIdWithAccent);
+        }
+      }
+    }
   });
 }
 
 document
-  .getElementById("scale-select-menu")
+  .getElementById("all-scale-select-menu")
   .addEventListener("change", (event) => {
     reset();
 
-    //chromatic scale includes all notes
-    if (event.target.value === "chromatic") {
-      return;
-    }
-
-    const scale = scaleObj.find((scale) => scale.name === event.target.value);
+    const scale = scaleObj.find(
+      (scale) => scale.name.toLowerCase() == event.target.value.toLowerCase()
+    );
 
     const scaleNotes = scale.notesPlayed;
 
@@ -68,7 +60,7 @@ document
     for (let i = 0; i < scaleNotes.length; i++) {
       for (let j = 0; j < pianoKeys.length; j++) {
         const pkeyId = scaleNotes[i].split("-")[1];
-        if (pkeyId == pianoKeys[j].id) {
+        if (pkeyId == pianoKeys[j].id.slice(1, pianoKeys[i].length)) {
           pianoKeys[j].classList.add(scale.name);
         }
       }
@@ -76,54 +68,70 @@ document
 
     for (let i = 0; i < pianoKeys.length; i++) {
       if (!pianoKeys[i].classList.contains(scale.name)) {
-        pianoKeys[i].classList.add("hidden");
+        pianoKeys[i].classList.add("p-hidden");
         pianoKeys[i].removeAttribute("tabindex");
       }
     }
+
+    displayCorrectAccents(scaleNotes);
   });
 
-document.addEventListener("click", (event) => {
-  if (
-    event.target.classList.contains("key") &&
-    !event.target.classList.contains("hidden")
-  ) {
-    let id = event.target.getAttribute("id");
-    let url = `../assets/sounds/piano/${id}_l.mp3`;
+document.querySelector(".piano-instrument").addEventListener(
+  "focus",
+  (event) => {
+    if (
+      event.target.classList.contains("key") &&
+      !event.target.classList.contains("p-hidden")
+    ) {
+      let id = event.target.getAttribute("id");
+      let note_id = id.slice(1, id.length);
+      let url = `/wp-content/instrument-demos/assets/sounds/piano/${note_id}_l.mp3`;
 
-    playNote(url);
-  }
+      playNote(url);
+    }
+  },
+  true
+);
 
-  if (event.target.classList.contains("play-btn")) {
-    const pianoKeys = document.querySelectorAll(".key:not(.hidden)");
-    const timeOut = pianoKeys.length * 401;
+document.addEventListener(
+  "click",
+  (event) => {
+    if (
+      event.target.classList.contains("key") &&
+      !event.target.classList.contains("p-hidden")
+    ) {
+      let id = event.target.getAttribute("id");
+      let note_id = id.slice(1, id.length);
+      let url = `/wp-content/instrument-demos/assets/sounds/piano/${note_id}_l.mp3`;
 
-    async function playBothScales() {
-      playScale(pianoKeys);
-      await wait_promise(timeOut);
-      playScaleReverse(pianoKeys);
-      await wait_promise(timeOut);
+      playNote(url);
+    }
+  },
+  true
+);
+
+document.addEventListener(
+  "mouseover",
+  (event) => {
+    if (
+      event.target.classList.contains("key") &&
+      !event.target.classList.contains("p-hidden")
+    ) {
+      event.target.focus();
+    }
+  },
+  true
+);
+
+document.querySelector(".piano-instrument").addEventListener(
+  "mouseleave",
+  (event) => {
+    if (
+      event.target.classList.contains("key") &&
+      !event.target.classList.contains("p-hidden")
+    ) {
       document.activeElement.blur();
     }
-    playBothScales();
-  }
-});
-
-window.onload = () => {
-  const href = window.location.href;
-  const scale =
-    href.split("/")[2] == "127.0.0.1:8080" ? "aeolian" : href.split("/")[3];
-  const menu = document.getElementById("scale-select-menu");
-
-  const options = menu.options;
-
-  for (let i = 0; i < options.length; i++) {
-    const scaleToFind = scale.toLowerCase();
-    if (options[i].value.toLowerCase() == scaleToFind) {
-      menu.selectedIndex = i;
-      break;
-    }
-  }
-  let evt = document.createEvent("HTMLEvents");
-  evt.initEvent("change", false, true);
-  menu.dispatchEvent(evt);
-};
+  },
+  true
+);

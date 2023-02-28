@@ -4,25 +4,23 @@ html {
 }
 
 .note:focus {
-  filter: invert(95%) sepia(30%) saturate(3592%) hue-rotate(303deg)
-    brightness(120%) contrast(139%)
-    drop-shadow(0px 3px 3px rgba(37, 37, 37, 0.699));
+  background: #ffff88;
   outline: none;
 }
 
+.note:hover {
+  cursor: pointer;
+  background: #ffff88;
+}
+
 .scale-instrument {
-  box-sizing: border-box;
   margin: 0 0 0 0;
   padding: 0.5rem;
-  height: 50vh;
+  max-width: 465px;
 }
 
 .hidden {
   display: none;
-}
-
-.sharp {
-  border: 1px solid red;
 }
 
 .black-line {
@@ -43,10 +41,26 @@ html {
 }
 
 .note {
-  width: 40px;
+  width: 18px;
+  height: 10px;
+  border-radius: 50%;
   margin-right: -10%;
-  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(202deg) brightness(114%)
-    contrast(95%) drop-shadow(0px 3px 3px rgba(37, 37, 37, 0.699));
+  transform: rotate(-15deg);
+  background: black;
+  border: none;
+  filter: drop-shadow(0px 3px 3px rgba(37, 37, 37, 0.699));
+  /* filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(202deg) brightness(114%)
+    contrast(95%) drop-shadow(0px 3px 3px rgba(37, 37, 37, 0.699)); */
+}
+
+.accent {
+  width: 20px;
+  font-size: 20pt;
+  margin-right: -12px;
+  margin-top: -20px;
+  font-weight: 1.2;
+  filter: drop-shadow(0px 3px 3px rgba(233, 233, 233, 0.699));
+  /* &#x266d */
 }
 
 .c-under {
@@ -67,48 +81,45 @@ html {
 }
 
 .part-container {
+  width: 100%;
+  height: 10px;
   position: relative;
   display: flex;
   flex-direction: row-reverse;
-  margin-left: -10%;
-  padding: 0;
-}
-
-.part-container .note:first-child {
-  margin-left: -10%;
+  justify-content: space-evenly;
 }
 
 .part-container:nth-child(8) {
-  bottom: -1vh;
+  bottom: -5px;
 }
 
 .part-container:nth-child(7) {
-  top: -0.8vh;
+  top: -3px;
 }
 
 .part-container:nth-child(6) {
-  top: -1.5vh;
+  top: -8px;
 }
 
 .part-container:nth-child(5) {
-  top: -3.5vh;
+  left: 5px;
+  top: -22px;
 }
 
 .part-container:nth-child(4) {
-  bottom: 5.3vh;
+  bottom: 36px;
 }
 
 .part-container:nth-child(3) {
-  bottom: 7vh;
+  bottom: 50px;
 }
 
 .part-container:nth-child(2) {
-  bottom: 8.8vh;
+  bottom: 65px;
 }
 
 .part-container:nth-child(1) {
-  left: 3vh;
-  bottom: 10vh;
+  bottom: 85px;
 }
 
 .last {
@@ -128,109 +139,119 @@ html {
 
 @media only screen and (min-width: 768px) {
   .part-container {
-    margin-left: -10%;
+    margin-left: -20px;
   }
 
   .note {
-    width: 65px;
-    margin-right: -5%;
+    width: 30px;
+    height: 15px;
+  }
+
+  .accent {
+    font-size: 25pt;
+    margin-top: -25px;
+    margin-left: 5px;
   }
 
   .part-container .note:first-child {
-    margin-left: -10%;
+    margin-right: 15px;
   }
 
   .part-container:nth-child(8) {
-    bottom: -1vh;
+    bottom: -10px;
   }
 
   .part-container:nth-child(7) {
-    top: -0.8vh;
+    top: -3px;
   }
 
   .part-container:nth-child(6) {
-    top: -1.5vh;
+    top: -8px;
   }
 
   .part-container:nth-child(5) {
-    top: -3vh;
+    top: -25px;
   }
 
   .part-container:nth-child(4) {
-    bottom: 4.5vh;
+    bottom: 38px;
   }
 
   .part-container:nth-child(3) {
-    bottom: 5.8vh;
+    bottom: 52px;
   }
 
   .part-container:nth-child(2) {
-    bottom: 7.5vh;
+    bottom: 68px;
   }
 
   .part-container:nth-child(1) {
-    left: 2vh;
-    bottom: 8.3vh;
+    left: 10px;
+    bottom: 83px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .note-container {
-    margin-left: 10em;
-    margin-right: 8em;
+    margin-left: 5.2em;
   }
+
   .treble-clef {
     position: absolute;
   }
 
   .treble {
     display: inherit;
-
-    width: 100px;
-  }
-  .part-container {
-    margin-left: -0%;
+    width: 90px;
   }
 
   .note {
-    width: 80px;
-    margin-right: -0%;
+    height: 13px;
+    width: 22px;
   }
 
+  .accent {
+    margin-right: -12px;
+    margin-top: -20px;
+    font-size: 18pt;
+  }
+
+  .part-container {
+    margin-right: 8px;
+  }
   .part-container .note:first-child {
-    margin-left: -10%;
+    margin-right: 15px;
   }
 
   .part-container:nth-child(8) {
-    bottom: -1vh;
+    bottom: -15px;
   }
 
   .part-container:nth-child(7) {
-    top: -0.8vh;
+    top: -3px;
   }
 
   .part-container:nth-child(6) {
-    top: -2vh;
+    top: -9px;
   }
 
   .part-container:nth-child(5) {
-    top: -3.5vh;
+    top: -25px;
   }
 
   .part-container:nth-child(4) {
-    bottom: 5vh;
+    bottom: 38px;
   }
 
   .part-container:nth-child(3) {
-    bottom: 6.7vh;
+    bottom: 50px;
   }
 
   .part-container:nth-child(2) {
-    bottom: 8vh;
+    bottom: 68px;
   }
 
   .part-container:nth-child(1) {
-    left: 2vh;
-    bottom: 9.3vh;
+    bottom: 81px;
   }
 }

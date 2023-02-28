@@ -1,53 +1,56 @@
 import scaleObj from "../assets/scaleObj.js";
 
 function playNote(note_id) {
-  const note = new Audio(`../assets/sounds/scale/${note_id}_stf.mp3`);
-  note.play();
-}
-
-function wait_promise(ms) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(ms);
-    }, ms);
-  });
-}
-
-//due to flex-box, scale is technically reversed in DOM from how it appears
-function playScaleReverse(notes) {
-  for (let i = 0; i < notes.length; i++) {
-    setTimeout(() => {
-      notes[i].focus();
-    }, i * 400);
-    const arr = notes[i].id.split("-");
-    const note_id = notes[i].classList.length > 2 ? arr[1] : arr[0];
-    setTimeout(() => {
-      playNote(note_id);
-    }, i * 400);
-  }
-}
-
-function playScale(notes) {
-  for (let i = notes.length - 1; 0 <= i; i--) {
-    setTimeout(() => {
-      notes[[notes.length - 1] - i].focus();
-    }, i * 400);
-    const arr = notes[i].id.split("-");
-    const note_id = notes[i].classList.length > 2 ? arr[1] : arr[0];
-    setTimeout(() => {
-      playNote(note_id);
-    }, ([notes.length - 1] - i) * 400);
-  }
+  const note = new Audio(
+    `/wp-content/instrument-demos/assets/sounds/scale/${note_id}_stf.mp3`
+  );
+  note.play().catch((e) => console.error(`Audio error: ${e.message}`));
 }
 
 function reset() {
   const notes = document.querySelectorAll(".note");
+  const extraDivs = document.querySelectorAll(".accent");
+  if (extraDivs) extraDivs.forEach((div) => div.remove());
   notes.forEach((note) => note.classList.add("hidden"));
+  notes.forEach((note) => note.classList.remove("sharp"));
+  notes.forEach((note) => note.classList.remove("flat"));
+  notes.forEach((note) => note.classList.remove("natural"));
+
   return notes;
 }
 
-function displayAccents(scalesNotes) {
+function displayAccents(scaleNotes) {
   const notes = document.querySelectorAll(".note:not(.hidden)");
+
+  for (let i = 0; i < scaleNotes.length; i++) {
+    const scaleNote = scaleNotes[i].split("-");
+    if (scaleNote.length == 3) {
+      const accent = scaleNote.pop();
+      const scaleNoteToCheck = scaleNote.join("-");
+      let noteToAccent = Object.values(notes).find(
+        (note) => note.id == scaleNoteToCheck
+      );
+      if (!noteToAccent && scaleNote[0] == scaleNote[1]) {
+        noteToAccent = document.getElementById(`${scaleNote[0]}`).children[0];
+      }
+
+      let newDiv = document.createElement("div");
+      newDiv.classList.add("accent");
+      if (accent == "b") {
+        newDiv.innerHTML = "&#x266d";
+        noteToAccent.classList.add("flat");
+      }
+      if (accent == "s") {
+        newDiv.innerHTML = "&#x266f";
+        noteToAccent.classList.add("sharp");
+      }
+      if (accent == "n") {
+        newDiv.innerHTML = "&#x266e";
+        noteToAccent.classList.add("natural");
+      }
+      noteToAccent.after(newDiv);
+    }
+  }
 }
 
 function displayNotesHelper(scaleNotes) {
@@ -78,8 +81,6 @@ function displayNotesHelper(scaleNotes) {
         ? notes[0].classList.remove("hidden")
         : notes[1].classList.remove("hidden");
     }
-
-    console.log(Object.values(scaleCounts)[i], hiddenNoteCount);
   }
 }
 
@@ -88,13 +89,50 @@ function displayNotes(notes, scaleNotes) {
   notes.forEach((note) => notesArray.push(note));
   for (let i = 0; i < notes.length; i++) {
     for (let j = 0; j < scaleNotes.length; j++) {
-      if (notes[i].id == scaleNotes[j]) {
-        console.log(notes[i]);
+      const scaleNote =
+        scaleNotes[j].split("-").length == 3
+          ? scaleNotes[j].split("-").slice(0, 2).join("-")
+          : scaleNotes[j];
+      const currentNote =
+        notes[i].id.split("-").length == 3
+          ? notes[i].id.split("-").slice(0, 2).join("-")
+          : notes[i].id;
+      if (currentNote == scaleNote) {
         notes[i].classList.remove("hidden");
       }
     }
   }
 }
+
+document.addEventListener(
+  "mouseover",
+  (e) => {
+    if (e.target.classList.contains("note")) {
+      e.target.focus();
+    }
+  },
+  true
+);
+
+document.addEventListener(
+  "focus",
+  (e) => {
+    let arr = e.target.id.split("-");
+
+    if (!e.target.classList.contains("note")) {
+      return;
+    }
+    const classes = e.target.classList;
+    let note_id;
+    if (classes.length > 1) {
+      note_id = classes.contains("natural") ? arr[0] : arr[1];
+    } else {
+      note_id = arr[0];
+    }
+    playNote(note_id);
+  },
+  true
+);
 
 document.addEventListener("click", (e) => {
   let arr = e.target.id.split("-");
@@ -104,61 +142,37 @@ document.addEventListener("click", (e) => {
   }
   const classes = e.target.classList;
   let note_id;
-  if (classes.length > 2) {
-    note_id = arr[2] == "n" ? arr[0] : arr[1];
+  if (classes.length > 1) {
+    note_id = classes.contains("natural") ? arr[0] : arr[1];
   } else {
     note_id = arr[0];
   }
-  console.log(`Natural: ${arr[0]}; Playing: ${note_id}`);
   playNote(note_id);
-  wait_promise(1000).then(() => document.activeElement.blur());
 });
 
-document.getElementById("scale-select-menu").addEventListener("change", (e) => {
-  e.preventDefault();
-  reset();
-
-  const scale = scaleObj.find((scale) => scale.name === e.target.value);
-  const scaleNotes = scale.notesPlayed;
-  const notes = document.querySelectorAll(".note");
-
-  displayNotes(notes, scaleNotes);
-  displayNotesHelper(scaleNotes);
-});
-
-document.getElementById("staff-play-btn").addEventListener("click", (e) => {
-  e.preventDefault();
-
-  const notes = document.querySelectorAll(".note:not(.hidden)");
-  const timeOut = notes.length * 401;
-
-  async function playBothScales() {
-    playScale(notes);
-    await wait_promise(timeOut);
-    playScaleReverse(notes);
-    await wait_promise(timeOut);
-    document.activeElement.blur();
-  }
-  playBothScales();
-});
-
-window.onload = () => {
-  const href = window.location.href;
-  const scale =
-    href.split("/")[2] == "127.0.0.1:8080" ? "aeolian" : href.split("/")[3];
-  const menu = document.getElementById("scale-select-menu");
-
-  const options = menu.options;
-
-  for (let i = 0; i < options.length; i++) {
-    const scaleToFind = scale.toLowerCase();
-    if (options[i].value.toLowerCase() == scaleToFind) {
-      menu.selectedIndex = i;
-      break;
+document.querySelector(".scale-instrument").addEventListener(
+  "mouseleave",
+  (e) => {
+    if (e.target.classList.contains("note")) {
+      document.activeElement.blur();
     }
-  }
+  },
+  true
+);
 
-  let evt = document.createEvent("HTMLEvents");
-  evt.initEvent("change", false, true);
-  menu.dispatchEvent(evt);
-};
+document
+  .getElementById("all-scale-select-menu")
+  .addEventListener("change", (e) => {
+    e.preventDefault();
+    reset();
+
+    const scale = scaleObj.find(
+      (scale) => scale.name.toLowerCase() == e.target.value.toLowerCase()
+    );
+    const scaleNotes = scale.notesPlayed;
+    const notes = document.querySelectorAll(".note");
+
+    displayNotes(notes, scaleNotes);
+    displayNotesHelper(scaleNotes);
+    displayAccents(scaleNotes);
+  });

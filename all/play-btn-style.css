@@ -1,0 +1,25 @@
+.all-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.play-btn {
+  padding: 1em;
+  margin: 1em;
+  list-style: none;
+  text-align: center;
+  background: #d5dce5;
+  color: black;
+  border-radius: 10%;
+}
+
+.play-btn:hover,
+.play-btn:active {
+  background: #8993a3;
+}
+
+.radio-select-wrapper {
+  filter: grayscale(100%);
+}

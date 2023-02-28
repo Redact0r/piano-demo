@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400");
 
 .guitar-body {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 1024px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
 
 .guitar-instrument {
+  margin-left: 5px;
+  margin-right: 35px;
   background-color: #353535;
   font-family: Lato, sans-serif;
   background-clip: border-box;
@@ -27,6 +29,7 @@
   height: 91vh;
   margin-top: 0;
   margin-bottom: 0;
+  max-height: 700px;
 }
 
 .string,
@@ -93,24 +96,23 @@
 .note-btn {
   cursor: pointer;
   width: 33px;
-  height: 33px;
+  height: 45px;
   border-radius: 50%;
   line-height: 33px;
   text-align: center;
+  font-size: 12pt;
   z-index: 2;
-  color: #eee;
-  background: teal;
-  opacity: 0.8;
-  border: 0;
+  color: black;
+  background: white;
+  opacity: 1;
+  border: 1.5px solid black;
   margin: -4em 0 0 -0.8em;
+  filter: drop-shadow(0px 3px 3px rgba(37, 37, 37, 0.699));
 }
 
-.note-btn:active {
-  opacity: 1;
-}
-
-.note-btn:hover {
-  opacity: 1;
+.note-btn:focus {
+  outline: none;
+  background: #ffff88;
 }
 
 .guitar-end {
@@ -128,60 +130,59 @@
   text-align: center;
 }
 
-.play-btn {
-  cursor: pointer;
+.fret-notation-wrapper {
+  float: right;
+  width: 30px;
+  padding-left: 10em;
+  margin-top: -10em;
+}
+
+#e-string-little .note-fret::after {
+  content: "6th";
   position: absolute;
-  width: 15%;
-  height: 8vh;
-  padding-right: 0;
-  filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(17deg)
-    brightness(102%) contrast(104%);
-  background-image: url("../assets/images/gtr-play-btn.png");
-  background-repeat: no-repeat;
-  right: 42%;
-  margin-top: 0.5rem;
-  background-size: 90%;
-  z-index: 2;
-  text-align: center;
+  margin-left: 30px;
+  margin-top: -40px;
+  font-style: italic;
 }
 
-.play-btn:hover {
-  filter: invert(86%) sepia(4%) saturate(0%) hue-rotate(276deg) brightness(91%)
-    contrast(82%);
-}
-.play-btn:focus {
-  outline: none;
-}
-.play-btn:active {
-  filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(17deg)
-    brightness(102%) contrast(104%);
+#e-string-little .note-fret:nth-child(1)::after {
+  content: "4th";
 }
 
-.single-fretmark:after {
-  content: "";
-  position: absolute;
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  background: #806233;
-  left: 50%;
-  bottom: 100%;
-  transform: translate(0%, -100%);
-  text-align: center;
-  color: #be975b;
-  line-height: 27px;
+#e-string-little .note-fret:nth-child(2)::after {
+  content: "5th";
+}
+#e-string-little .note-fret:nth-child(3)::after {
+  content: "6th";
 }
 
-.single-fretmark:nth-child(2):after {
-  content: "5";
+#e-string-little .note-fret:nth-child(4)::after {
+  content: "7th";
 }
 
-.single-fretmark:nth-child(4):after {
-  content: "7";
+#e-string-little .note-fret:nth-child(5)::after {
+  content: "8th";
 }
-
-.single-fretmark:nth-child(6):after {
-  content: "9";
+#e-string-little .note-fret:nth-child(6)::after {
+  content: "9th";
+}
+#e-string-little .note-fret:nth-child(7)::after {
+  content: "10th";
+}
+#e-string-little .note-fret:nth-child(8)::after {
+  content: "11th";
+}
+#e-string-little .note-fret:nth-child(9)::after {
+  content: "12th";
+}
+#e-string-little .note-fret:nth-child(10)::after {
+  content: "13th";
+}
+#e-string-little .note-fret:nth-child(11)::after {
+  content: "14th";
+}
+#e-string-little .note-fret:nth-child(12)::after {
+  content: "15th";
 }
 
 .hidden {
@@ -189,25 +190,20 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .play-btn {
-    width: 5%;
-    right: 48.5%;
+  .gtr-play-btn {
+    margin-top: 0.5rem;
   }
 
-  .single-fretmark:after {
-    height: 35px;
-    width: 35px;
-    line-height: 37px;
-    font-size: 1.5em;
-    transform: translate(-10%, -90%);
+  #e-string-little .note-fret::after {
+    margin-left: 50px;
   }
 
   .note-btn {
     font-size: 12pt;
-    height: 50px;
-    width: 50px;
+    height: 55px;
+    width: 40px;
     line-height: 50px;
-    transform: translate(-10%, -15%);
+    transform: translate(0%, -15%);
   }
 
   .string:before {
